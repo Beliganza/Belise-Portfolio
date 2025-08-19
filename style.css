@@ -25,131 +25,157 @@ body {
 }
 
 /* ============================
-   LEFT-SIDEBAR NAVIGATION
+   TOP NAVIGATION BAR
    ============================ */
-
-/* Container for vertical nav on the left */
 nav.nav-horizontal {
   display: flex;                   /* enable flex layout */
-  flex-direction: column;          /* stack links vertically */
-  justify-content: center;         /* center links vertically in sidebar */
-  align-items: center;             /* center links horizontally */
-  position: fixed;                 /* pin nav to viewport */
-  top: 0;                          /* align to top */
-  left: 0;                         /* align to left */
-  width: 200px;                    /* sidebar width */
-  height: 100vh;                   /* full viewport height */
-  padding: 4rem 1rem;              /* vertical + horizontal padding */
-  background-color: #312450;       /* match page background */
-  border-right: 1px solid #6c2069; /* line on the right */
-  z-index: 1000;                   /* sit above other content */
+  justify-content: space-between; /* separate title and links */
+  align-items: center;            /* center items vertically */
+  position: fixed;                /* stick to top */
+  top: 0;
+  left: 0;
+  width: 100%;                    /* full width */
+  height: 70px;                   /* fixed nav height */
+  padding: 0 2rem;                /* horizontal padding */
+  background-color: #1b0b2f;      /* same background */
+  border-bottom: 1px solid #23153c;
+  z-index: 1000;
 }
 
-/* Styling for each nav link */
-nav.nav-horizontal a {
-  display: block;              /* full-width clickable area */
-  width: 100%;                 /* span entire sidebar */
-  text-align: right;          /* center link text */
-  color: #c9c7c4;              /*link color */
-  text-decoration: none;       /* remove underline */
-  border-bottom: 1px solid #682555;/* gold underline below nav */
-  font-weight: 600;            /* semi-bold */
-  font-size: 1rem;          /* larger link text */
-  letter-spacing: 0.5px;       /* subtle letter spacing */
-  margin: 1rem 0;            /* vertical spacing between links */
-  transition: color 0.3s ease; /* smooth hover color change */
+/* Ganza Portfolio on the far left */
+.site-title a {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c9c7c4;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
 }
 
-/* Hover state for links */
-nav.nav-horizontal a:hover {
-  color: #ffffff;              /* switch to white on hover */
+.site-title a:hover {
+  color: #e1c0a7;
 }
 
-/* Push main content right so it isn’t hidden under the sidebar */
-body {
-  margin-left: 200px;          /* offset by sidebar width */
+/* Right nav links */
+.nav-horizontal .nav-links {
+  display: flex;
+  gap: 2rem;
 }
+
+/* Styling for nav links */
+.nav-horizontal .nav-links a {
+  color: #c9c7c4;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-horizontal .nav-links a:hover {
+  color: #e1c0a7;
+}
+
+/* Remove top space from intro content */
+.intro-content {
+  width: 100%;
+  margin-top: 70px;
+}
+
+
+
 
 /* ============================
    INTRO SECTION
    ============================ */
-
-/* Wrapper for intro block, fills entire first viewport */
 .intro-content {
-  display: flex;                /* flex for centering */
-  flex-direction: column;       /* stack items vertically */
-  justify-content: center;      /* center items vertically */
-  align-items: center;          /* center items horizontally */
-  text-align: center;           /* center all text */
-  height: 100vh;                /* full viewport height */
-  width: calc(100% - 200px);    /* full width minus sidebar */
-  padding: 0 2rem;              /* horizontal padding */
-  background-color: #5e42a6;    /* match background */
-  box-sizing: border-box;       /* include padding in width */
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: calc(100vh - 70px);   /* updated to account for navbar */
+  width: 100%;
+  padding: 0 2rem;
+  background-color: #23153c;
+  box-sizing: border-box;
+  margin-top: 70px; /* make sure content starts below nav */
 }
 
-/* Reset margin on the greeting wrapper */
 .tag {
-  margin: 0;                    /* remove default margins */
+  margin: 0;
 }
 
-/* Rotating greeting text */
 .dynamic-text {
-  font-size: 1.6rem;            /* greeting font size */
-  color: #90732a;               /* gold color */
-  font-weight: 700;             /* bold */
-  letter-spacing: 0.2em;        /* spaced letters */
-  position: relative;           /* anchor for pseudo-element */
-  margin: 0;                    /* reset margin */
+  font-size: 1.6rem;
+  color: #f1ecdf;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  position: relative;
+  margin: 0;
   font-family: cursive;
 }
 
-/* Blinking cursor after the greeting */
 .dynamic-text::after {
-  content: '|';                 /* cursor character */
-  position: absolute;           /* position relative to text */
-  right: -0.2ch;                /* just to the right of text */
-  animation: blink 0.7s step-end infinite; /* blinking effect */
+  content: '|';
+  position: absolute;
+  right: -0.2ch;
+  animation: blink 0.7s step-end infinite;
 }
 
-/* “Welcome to my portfolio” with lines on each side */
-.intro-content h2 {
-  display: flex;                /* flex for pseudo-elements */
-  align-items: center;          /* vertical alignment */
-  text-transform: uppercase;
-  font-size: 3rem;              /* heading size */
-  margin: 0;                    /* remove default margin */
-  font-family: Georgia, serif;
-}
-
-
-/* Supporting paragraph below your name */
-.intro-paragraph {
-  font-size: 1.7rem;            /* paragraph size */
-  line-height: 1.6;             /* line spacing */
-  max-width: 600px;             /* max line length */
-  margin: 0;                    /* reset margin */
-  color:#c9c7c4;               /* white text */
-  font-family: serif;
-  align-items: left;          /* vertical alignment */
-}
-
-/* Blink animation keyframes for the cursor */
 @keyframes blink {
-  0%, 100% { opacity: 1; }      /* visible at start & end */
-  50%      { opacity: 0; }      /* hidden halfway */
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
 }
 
-.about-photo {
-  width: 60vw;       /* 60% of the viewport width */
-  max-width: 800px;  /* but never grow beyond 800px */
-  aspect-ratio: 1;   /* maintain a 1:1 ratio for perfect circle */
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  margin-top: 2.5rem;
+.intro-content h2 {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin: 0;
+  font-family: Georgia, serif;
+  color: #ffffff;
 }
+
+.intro-paragraph {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+  color: #b5aeae;
+  font-family: Georgia, serif;
+  align-items: left;
+}
+
+
+#intro {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: transparent;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+
 
 
 
@@ -161,7 +187,7 @@ body {
   height: 100vh;                /* full viewport height */
   width: 100%;    /* full width minus sidebar */
   /* Background & box model */
-  background-color: #4a2d54;      /* dark grey background */
+  background-color: #ffffff;      /* dark grey background */
   box-sizing: border-box;         /* include padding in width */
   
   /* Center content vertically + horizontally */
@@ -176,7 +202,8 @@ body {
 
 /* Heading inside About */
 #about h2 {
-  color: #ffffff;                 /* gold title */
+  font-family: Georgia, serif; 
+  color: #593f88;                 /* gold title */
   font-size: 2rem;                
   margin-bottom: 1rem;
   text-align: right;          
@@ -184,7 +211,7 @@ body {
 
 /* Paragraphs inside About */
 #about p {
-  color: #bbb9b7;                 
+  color: #242425;                 
   font-size: 1.2rem;                
   line-height: 1.5rem;               
   text-align: left;             
@@ -198,34 +225,24 @@ body {
    PROJECTS SECTION
    ============================ */
 #portfolio {
-  /* Auto height, content-driven */
-  width: 100%;      /* fit under sidebar */
-  /* Center content vertically + horizontally */
-  display: flex;                  
-  flex-direction: column;         
-  justify-content: center;        
-  align-items: center;            
-  
-  /* Internal spacing */
-  padding:0 2rem; 
-  /* Box styling */
-               
-  padding:0 2rem;                  
-  background-color: #280729;      
-  border-radius: 10px;            
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 2rem 0;  /* added top padding */
+  background-color: #ffffff;
+  border-radius: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  box-sizing: border-box;         
+  box-sizing: border-box;
   transition: transform 0.3s ease;
 }
 
-/* Hover lift for Projects */
-#portfolio:hover {
-  transform: translateY(-3px);    
-}
 
 /* Projects heading */
 #portfolio h2 {
-  color: #ffffff;                 
+  font-family: Georgia, serif; 
+  color: #593f88;                 
   font-size: 2rem;                
   margin-bottom: 1rem;            
 }
@@ -261,7 +278,7 @@ body {
   flex-direction: row;                  /* side-by-side layout */
   width: 100%;                          /* fill grid cell */
   height: 200px;                        /* fixed card height */
-  background-color: #361737;            /* black background */
+  background-color: #1b0b2f;            /* black background */
   border-radius: 20px;                  /* rounded corners */
   overflow: hidden;                     /* clip overflow */
   cursor: pointer;                      /* pointer on hover */
@@ -312,36 +329,78 @@ body {
    RESUME SECTION
    ============================ */
 #resume {
-  width: 100%;      /* fit under sidebar */
-  /* Center content vertically + horizontally */
-  display: flex;                  
-  flex-direction: column;         
-  justify-content: center;        
-  align-items: center;            
-  
-  /* Internal spacing */
-  padding:0 2rem; 
-  /* Box styling */
-               
-  padding:0 2rem;                  
-  background-color: #1f0721;      
-  border-radius: 10px;            
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  box-sizing: border-box;         
-  transition: transform 0.3s ease;
+  width: 100%;
+  padding-top: 70px;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 4rem;
 }
 
-/* Hover lift for Resume */
-#resume:hover {
-  transform: translateY(-3px);    
-}
-
-/* Resume heading */
 #resume h2 {
-  color: #ffffff;                 
-  font-size: 2rem;                
-  margin-bottom: 1rem;            
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: Georgia, serif;
+  color: #1a1a1a;
+  margin: 0;
+  text-align: center;
 }
+
+.resume-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.resume-preview {
+  width: 90%;
+  max-width: 900px;
+  height: 1000px; /* ✅ increase this until the entire PDF fits */
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.resume-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+#resume embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.btn-download-cv {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #206a34;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-download-cv:hover {
+  background-color: #114d23;
+}
+
+
+    
 
 /* ============================
    CONTACT SECTION
@@ -354,8 +413,8 @@ body {
   justify-content: center;        
   align-items: center;            
   padding: 0 2rem;                  
-  background-color: #1f0721;      
-  border-radius: 10px;            
+  background-color: #ffffff;      
+  border-radius: 0;               /* removed rounded corners for section */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   box-sizing: border-box;         
   transition: transform 0.3s ease;       
@@ -364,7 +423,7 @@ body {
 /* Contact links */
 #contact a {
   display: inline-block;          
-  color: #90732a;                 
+  color: #2a2a28;                 
   font-weight: 500;               
   font-size: 1rem;              
   text-decoration: none;          
@@ -379,7 +438,7 @@ body {
 /* Intro text */
 #contact .contact-intro {
   margin-bottom: 1.5rem;    /* space below */
-  color: #cccccc;           /* light gray text */
+  color: #1a191b;           /* light gray text */
   font-size: 1.7rem;        /* paragraph size */
   font-family: Georgia, serif;  
   align-items: left;
@@ -389,8 +448,9 @@ body {
 /* “Reach out on:” line */
 #contact .contact-cta {
   margin-bottom: 1.5rem;    /* space below */
-  color: #ffffff;           
-  font-size: 1.7rem;        
+  color: #593f88;           
+  font-size: 2rem;   
+  font-weight: 600;     
   font-family: Georgia, serif;  
   align-items: left;
   max-width: 700px;
@@ -399,7 +459,7 @@ body {
 /* Email line */
 #contact .contact-email {
   margin-bottom: 0.5rem;    
-  color: #cccccc;           
+  color: #413626;           
   font-size: 1rem;        
   font-family: Georgia, serif;  
   align-items: left;
@@ -409,7 +469,7 @@ body {
 /* LinkedIn line */
 #contact .contact-linkedin {
   margin-bottom: 1.5rem;    
-  color: #cccccc;           
+  color: #413626;           
   font-size: 1rem;        
   font-family: Georgia, serif;  
   align-items: left;
@@ -513,53 +573,18 @@ body {
   }
 }
 
-/* --------------------------------------------------
-   FIX INTRO WIDTH (so the purple really fills to the
-   right edge, instead of leaving a black gap)
-   -------------------------------------------------- */
-.intro-content {
-  /* override the old calc(100% - 200px) which was
-     leaving 200px of body BG showing */
-  width: calc(100vw - 200px);    /* use viewport width minus sidebar */
-}
 
-
-/* ——————————————————————————————
-   Override: Animated Gradient for Intro Section
-   (Paste this at the very end of your CSS file)
-   —————————————————————————————— */
-
-.intro-content {
-  /* replace static bg with animated gradient */
-  background: linear-gradient(
-    45deg,
-    #721e68  0%,
-    #4a2d54 25%,
-    #5e42a6 100%,
-    #361737 75%,
-    #5e42a6 100%
-    
-  );
-  background-size: 400% 400%;         /* enlarge gradient for movement */
-  animation: gradientShift 15s ease infinite;  /* animate indefinitely */
-}
-
-@keyframes gradientShift {
-  0%   { background-position:   0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position:   0% 50%; }
-}
 
 
 /* Styled rectangular “Download CV” button */
 .btn-download-cv {
   display: inline-block;               /* shrink to fit content + padding */
   padding: 0.75rem 1.5rem;             /* top/bottom and left/right space */
-  border: 2px solid #90732a;           /* gold border matching your theme */
-  border-radius: 6px;                  /* slightly rounded corners */
-  background-color: transparent;       /* transparent by default */
-  color: #90732a;                      /* gold text */
-  font-weight: 600;                    /* semi-bold label */
+  border: 2px solid #b8acc6;           /* gold border matching your theme */
+  border-radius: 25px;                  /* slightly rounded corners */
+  background-color: #b8acc6;       /* transparent by default */
+  color: #1a191b;                      /* gold text */
+  font-weight: 500;                    /* semi-bold label */
   text-decoration: none;               /* remove underline */
   transition: 
     background-color 0.3s ease, 
@@ -568,9 +593,76 @@ body {
 
 /* Hover state: invert colors */
 .btn-download-cv:hover {
-  background-color: #90732a;           /* gold background */
+  background-color: #1b0b2f;           /* gold background */
   color: #ffffff;                      /* white text */
 }
 
+/* === particles.js ONLY INSIDE INTRO === */
 
 
+
+/* Full‐size canvas for particles */
+#particles-js {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  z-index: 0;                       /* behind all intro children */
+  pointer-events: none;
+  background: transparent;
+
+}
+
+/* Push all intro text & elements above the canvas */
+.intro-content > *:not(#particles-js) {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ─── Contact Link Boxes ─── */
+#contact .contact-email,
+#contact .contact-linkedin {
+  display: inline-block;             /* shrink to fit */
+  border: 2px solid #b8acc6;         /* gold border */
+  border-radius: 25px;                /* rounded corners */
+  padding: 0.3rem 1.5rem;           /* same padding as CV button */
+  margin: 0.3rem 0;                  /* vertical spacing */
+  background-color: #b8acc6;     /* transparent background */
+  color: #1b0b2f;                    /* gold text */
+  font-weight: 600;
+  text-decoration: none;             /* remove underline */
+  transition: background-color 0.3s ease,
+              color 0.3s ease;
+}
+
+#contact .contact-email:hover,
+#contact .contact-linkedin:hover {
+  background-color: #1b0b2f;         /* fill on hover */
+  color: #ffffff;                    /* white text on hover */
+}
+
+/* Keep your link inside the box from getting underlined */
+#contact .contact-email a,
+#contact .contact-linkedin a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-section {
+  display: none;
+  width: 100%;
+  height: calc(100vh - 70px); /* full screen minus nav height */
+  overflow-y: auto;
+}
+
+.page-section.active {
+  display: block;
+}
+
+#resume.page-section {
+  height: auto !important;
+  min-height: 100vh;
+  overflow-y: visible;
+}
