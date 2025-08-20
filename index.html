@@ -99,68 +99,100 @@
   </section>
 
   <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Recent Projects</h2>
-    <div class="project-grid">
-      <div class="project-card" onclick="openModal('project1')">
-        <img src="photo1.png" alt="MySQL-Based Manuscript Management System" />
-        <div class="project-info">
-          <h3>MySQL-Based Manuscript Management System</h3>
-          <p>Database | SQL, ER Diagrams, Business Logic</p>
-        </div>
-      </div>
-      <div class="project-card" onclick="openModal('project2')">
-        <img src="photo2.png" alt="fMRI Music Genre Classifier" />
-        <div class="project-info">
-          <h3>fMRI Music Genre Classifier</h3>
-          <p>Machine Learning | Python, Scikit-learn</p>
-        </div>
-      </div>
-      <div class="project-card" onclick="openModal('project3')">
-        <img src="photo3.png" alt="Six Degrees of Separation" />
-        <div class="project-info">
-          <h3>Six Degrees of Separation</h3>
-          <p>Graph Theory | Java, BFS</p>
-        </div>
-      </div>
-      <div class="project-card" onclick="openModal('project4')">
-        <img src="photo4.png" alt="Collaborative Graphical Editor" />
-        <div class="project-info">
-          <h3>Collaborative Graphical Editor</h3>
-          <p>Java | Multithreading, Sockets</p>
-        </div>
-      </div>
-      <div class="project-card" onclick="openModal('project5')">
-        <img src="photo5.png" alt="Map Pathfinder" />
-        <div class="project-info">
-          <h3>Map Pathfinder</h3>
-          <p>Algorithms | Java, BFS</p>
-        </div>
-      </div>
-      <div class="project-card" onclick="openModal('project6')">
-        <img src="photo6.png" alt="Huffman Encoding" />
-        <div class="project-info">
-          <h3>Huffman Encoding</h3>
-          <p>Data Compression | Trees, Encoding</p>
-        </div>
-      </div>
-      <div class="project-card link-card" onclick="openModal('project7')">
-        <img src="halo.png" alt="Halo Team Networking Glasses" />
-        <div class="project-info">
-          <h3>Halo Team Networking Glasses</h3>
-          <p>UX Research + Visual Design</p>
-        </div>
+<section id="portfolio">
+  <h2>Recent Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <img src="photo1.png" alt="MySQL-Based Manuscript Management System" />
+      <div class="project-info">
+        <h3>MySQL-Based Manuscript Management System</h3>
+        <p>Database | SQL, ER Diagrams, Business Logic</p>
+        <button class="learn-more" type="button" onclick="openModal('project1')">Learn More</button>
       </div>
     </div>
-  </section>
 
-  <!-- Modal Structure -->
-  <div id="project-modal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
-      <div id="modal-body"></div>
+    <div class="project-card">
+      <img src="photo2.png" alt="fMRI Music Genre Classifier" />
+      <div class="project-info">
+        <h3>fMRI Music Genre Classifier</h3>
+        <p>Machine Learning | Python, Scikit-learn</p>
+        <button class="learn-more" type="button" onclick="openModal('project2')">Learn More</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="photo3.png" alt="Six Degrees of Separation" />
+      <div class="project-info">
+        <h3>Six Degrees of Separation</h3>
+        <p>Graph Theory | Java, BFS</p>
+        <button class="learn-more" type="button" onclick="openModal('project3')">Learn More</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="photo4.png" alt="Collaborative Graphical Editor" />
+      <div class="project-info">
+        <h3>Collaborative Graphical Editor</h3>
+        <p>Java | Multithreading, Sockets</p>
+        <button class="learn-more" type="button" onclick="openModal('project4')">Learn More</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="photo5.png" alt="Map Pathfinder" />
+      <div class="project-info">
+        <h3>Map Pathfinder</h3>
+        <p>Algorithms | Java, BFS</p>
+        <button class="learn-more" type="button" onclick="openModal('project5')">Learn More</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="photo6.png" alt="Huffman Encoding" />
+      <div class="project-info">
+        <h3>Huffman Encoding</h3>
+        <p>Data Compression | Trees, Encoding</p>
+        <button class="learn-more" type="button" onclick="openModal('project6')">Learn More</button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="halo.png" alt="Halo Team Networking Glasses" />
+      <div class="project-info">
+        <h3>Halo Team Networking Glasses</h3>
+        <p>UX Research + Visual Design</p>
+        <button class="learn-more" type="button" onclick="openModal('project7')">Learn More</button>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="photo7.png" alt="Blogpost Management Application" />
+      <div class="project-info">
+        <h3>Blogpost Management Application</h3>
+        <p>Python| MongoDB| Dictionaries</p>
+        <button class="learn-more" type="button" onclick="openModal('project8')">Learn More</button>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="photo8.png" alt="Federated learning" />
+      <div class="project-info">
+        <h3>Federated learning</h3>
+        <p>Machine Learning| Healthcare| Research</p>
+        <button class="learn-more" type="button" onclick="openModal('project9')">Learn More</button>
+      </div>
     </div>
   </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="project-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()" aria-label="Close">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+
+
 
   <!-- Resume Section -->
   <section id="resume" class="page-section">
@@ -216,6 +248,27 @@
       if (id === 'project5') content = `<h2>Map Pathfinder</h2><p>Created a graph of Dartmouth campus and used BFS to compute shortest paths between locations.</p>`;
       if (id === 'project6') content = `<h2>Huffman Encoding</h2><p>Developed a compression/decompression tool using the Huffman coding algorithm with full pipeline implementation.</p>`;
       if (id === 'project7') content = `<h2>Halo Team Networking Glasses</h2><p>The Halo Team Networking Glasses are smart AR eyewear that overlay real-time attendee information, name tags, and ice-breaker prompts directly on your lenses—enabling hands-free, seamless networking at conferences and events.</p><p><a href="https://hcinetworking.onrender.com/" target="_blank">Visit website</a></p>`;
+      if (id === 'project8') content = `<h2>Blogpost Management App</h2><p>I built a command-line blog application that lets users create posts, generate unique permalinks, add comments, and search through content. Each post stores its title, body, tags, and comments in structured data, making it easy to manage and retrieve information.
+                                            The system also includes a built-in search feature for posts and comments, deletion handling, and an interactive command loop that processes user input.</a></p>`;
+      if (id === 'project9') content = `
+  <h2>Cross-Model Adversarial Attacks in Federated Learning</h2>
+  <p>
+    This project explored whether universal adversarial perturbations, generated using the Fast Gradient Sign Method (FGSM), 
+    could transfer across models trained in a federated learning setup. Using NIH Chest X-rays and the RSNA Pneumonia dataset, 
+    I trained local and global models (ResNet50, DenseNet121, InceptionV3) across multiple sites. 
+    Results showed that ResNet50 models were the most vulnerable to adversarial transfer, InceptionV3 was the most robust, 
+    and global models trained via federated averaging demonstrated stronger resistance than local ones. 
+    The findings highlight systemic risks in federated learning when models share similar architectures, while architectural diversity 
+    provided some but limited protection.
+  </p>
+  <p>
+    <strong>Future directions</strong> include testing stronger attack methods, incorporating adversarial defenses like adversarial training, 
+    expanding to additional architectures, and evaluating performance in real-world heterogeneous federated deployments.
+  </p>
+  <p>
+    <a href="federated learning.pdf" target="_blank">📄 View Poster</a>
+  </p>`;
+
       body.innerHTML = content;
       modal.style.display = 'flex';
     }

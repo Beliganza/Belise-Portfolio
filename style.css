@@ -666,3 +666,24 @@ nav.nav-horizontal {
   min-height: 100vh;
   overflow-y: visible;
 }
+
+
+.learn-more {
+  margin-top: 0.5rem;
+  display: inline-block;
+  width: 160px;                  /* fixed width */
+  height: 35px;                  /* fixed height */
+  text-align: center;            /* center text horizontally */
+  padding: 0.5rem 1rem;
+  background-color: #1b0b2f;
+  color: #fff;
+  border: 2px solid #ffffff;      /* white border */
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.05s ease-in-out;
+}
+.learn-more:hover { background-color: #98959e; }
+.learn-more:active { transform: translateY(1px); }
+
+
