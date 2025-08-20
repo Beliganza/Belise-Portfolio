@@ -180,6 +180,15 @@
         <button class="learn-more" type="button" onclick="openModal('project9')">Learn More</button>
       </div>
     </div>
+
+     <div class="project-card">
+      <img src="photo9.png" alt="Portfolio Website" />
+      <div class="project-info">
+        <h3>Portfolio Website</h3>
+        <p>HTML| CSS</p>
+        <button class="learn-more" type="button" onclick="openModal('project10')">Learn More</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -268,7 +277,8 @@
   <p>
     <a href="federated learning.pdf" target="_blank">📄 View Poster</a>
   </p>`;
-
+      
+      if (id === 'project10') content = `<h2> Portfolio Website</h2><p> Designed this website as my introduction to HTML and CSS. It is still undergoing changes since I update it the more I learn</p>`;
       body.innerHTML = content;
       modal.style.display = 'flex';
     }
