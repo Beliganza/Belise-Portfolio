@@ -687,3 +687,120 @@ nav.nav-horizontal {
 .learn-more:active { transform: translateY(1px); }
 
 
+/* ============================
+   MODAL PROJECT STYLING
+   ============================ */
+
+/* Main modal title */
+#project-modal h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #301a38; /* keep your accent */
+}
+
+/* Section containers */
+#project-modal section {
+  margin-bottom: 1.25rem;
+}
+
+/* Section headers */
+#project-modal h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  color: #2e2d2d;
+}
+
+/* Paragraph text inside sections */
+#project-modal p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0.25rem 0;
+  color: #232222;
+}
+/* ============================
+   BULLET TEXT: uniform start column (resume-style)
+   ============================ */
+
+#project-modal { --bullet-gutter: 1.5rem; } /* change once to shift all bullets */
+
+/* Make sure lists ignore any centering from parents */
+#project-modal ul,
+#project-modal li {
+  text-align: left !important;
+}
+
+/* Remove browser list spacing so we control the column */
+#project-modal ul {
+  margin: 0.25rem 0 0.75rem 0;
+  padding: 0;
+  list-style: none;              /* we'll draw our own marker */
+}
+
+/* Each item gets a fixed left gutter for the text start */
+#project-modal li {
+  position: relative;
+  margin: 0 0 0.35rem 0;
+  padding-left: var(--bullet-gutter);  /* <-- text always starts here */
+  line-height: 1.45;
+  font-size: 0.95rem;
+  color: #262626;
+}
+
+/* Custom marker pinned to a single column */
+#project-modal li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.1em;                    /* vertical tweak of the dot */
+  width: calc(var(--bullet-gutter) - 0.25rem); /* reserves a consistent marker column */
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #4d2a5c;                /* your accent */
+}
+
+/* Keep nested lists aligned to the SAME start column */
+#project-modal ul ul {
+  margin: 0.25rem 0 0 0;
+  padding: 0;
+}
+#project-modal ul ul li {
+  padding-left: var(--bullet-gutter);
+}
+
+
+/* Links row */
+#project-modal a {
+  display: inline-block;
+  margin-top: 0.4rem;
+  margin-right: 0.6rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 1px solid #b8acc6;
+  color: #4d2a5c;
+  transition: all 0.25s ease;
+}
+
+#project-modal a:hover {
+  background-color: #b8acc6;
+  color: #090909; /* contrast */
+  transform: translateY(-1px);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #project-modal h2 { font-size: 1.4rem; }
+  #project-modal h3 { font-size: 0.9rem; }
+  #project-modal p,
+  #project-modal li { font-size: 0.85rem; }
+}

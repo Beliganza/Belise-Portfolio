@@ -246,72 +246,384 @@
       }, 2500);
     });
 
-    function openModal(id) {
-      const modal = document.getElementById('project-modal');
-      const body = document.getElementById('modal-body');
-      let content = '';
-      if (id === 'project1') 
-      content = `<h2>MySQL-Based Manuscript Management System</h2>
-             <p>Engineered a 3NF schema using ER diagrams. Built a MySQL database with SQL scripts, triggers, and stored procedures. 
-             <a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/lab2c" target="_blank">View Code on GitHub</a></p>`;
+    
+  function openModal(id) {
+    const modal = document.getElementById('project-modal');
+    const body = document.getElementById('modal-body');
+    let content = '';
 
-      if (id === 'project2') content = `<h2>fMRI Music Genre Classifier</h2><p>Built a classification pipeline using Python and scikit-learn. Achieved 97% accuracy predicting genres from brain scans.</p>`;
-      if (id === 'project3') 
-      content = `<h2>Six Degrees of Separation</h2>
-             <p>Constructed a graph using BFS to find shortest paths between actors. UI allows querying connections and changing the center. 
-             <a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/Kevin%20Bacon%20Game" target="_blank">View Code on GitHub</a></p>`;
+    if (id === 'project1')
+      content = `
+        <h2>MySQL‑Based Manuscript Management System</h2>
 
-      if (id === 'project4') content = `<h2>Collaborative Graphical Editor</h2><p>Built a synchronized drawing editor with multithreading and client/server messaging in Java.</p>`;
-      if (id === 'project5') 
-      content = `<h2>Map Pathfinder</h2>
-             <p>Created a graph of Dartmouth campus and used BFS to compute shortest paths between locations. 
-             <a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/Map%20Pathfinder" target="_blank">View Code on GitHub</a></p>`;
+        <section>
+          <h3>Project Overview</h3>
+          <p>Designed and implemented a normalized (3NF) relational database to manage manuscripts, authors, reviewers, and submissions.</p>
+        </section>
 
-      if (id === 'project6') 
-      content = `<h2>Huffman Encoding</h2>
-             <p>Developed a compression/decompression tool using the Huffman coding algorithm with full pipeline implementation. 
-             <a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/Huffman%20Coding" target="_blank">View Code on GitHub</a></p>`;
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Modeled entities/relations with ER diagrams and translated them into SQL DDL.</li>
+            <li>Implemented triggers and stored procedures to enforce business rules (e.g., status transitions, review assignment).</li>
+            <li>Wrote SQL scripts for data loading, integrity checks, and common admin workflows.</li>
+          </ul>
+        </section>
 
-      if (id === 'project7') content = `<h2>Halo Team Networking Glasses</h2><p>The Halo Team Networking Glasses are smart AR eyewear that overlay real-time attendee information, name tags, and ice-breaker prompts directly on your lenses—enabling hands-free, seamless networking at conferences and events.</p><p><a href="https://hcinetworking.onrender.com/" target="_blank">Visit website</a></p>`;
-      if (id === 'project8') 
-      content = `<h2>Blogpost Management App</h2>
-             <p>I built a command-line blog application that lets users create posts, generate unique permalinks, add comments, and search through content. Each post stores its title, body, tags, and comments in structured data, making it easy to manage and retrieve information.
-             The system also includes a built-in search feature for posts and comments, deletion handling, and an interactive command loop that processes user input. 
-             <a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/LAB4" target="_blank">View Code on GitHub</a></p>`;
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>MySQL, SQL (DDL/DML), Stored Procedures, Triggers</li>
+            <li>ER Modeling, 3NF Normalization</li>
+          </ul>
+        </section>
 
-      if (id === 'project9') content = `
-  <h2>Cross-Model Adversarial Attacks in Federated Learning</h2>
-  <p>
-    This project explored whether universal adversarial perturbations, generated using the Fast Gradient Sign Method (FGSM), 
-    could transfer across models trained in a federated learning setup. Using NIH Chest X-rays and the RSNA Pneumonia dataset, 
-    I trained local and global models (ResNet50, DenseNet121, InceptionV3) across multiple sites. 
-    Results showed that ResNet50 models were the most vulnerable to adversarial transfer, InceptionV3 was the most robust, 
-    and global models trained via federated averaging demonstrated stronger resistance than local ones. 
-    The findings highlight systemic risks in federated learning when models share similar architectures, while architectural diversity 
-    provided some but limited protection.
-  </p>
-  <p>
-    <strong>Future directions</strong> include testing stronger attack methods, incorporating adversarial defenses like adversarial training, 
-    expanding to additional architectures, and evaluating performance in real-world heterogeneous federated deployments.
-  </p>
-  <p>
-    <a href="federated learning.pdf" target="_blank">📄 View Poster</a>
-  </p>`;
-      
-      if (id === 'project10') content = `<h2> Portfolio Website</h2><p> Designed this website as my introduction to HTML and CSS. It is still undergoing changes since I update it the more I learn</p>`;
-      body.innerHTML = content;
-      modal.style.display = 'flex';
+        <section>
+          <h3>Team Members</h3>
+          <p>Individual (1)</p>
+        </section>
+
+        <section>
+          <h3>Links</h3>
+          <p><a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/lab2c" target="_blank" rel="noopener">💻 View Code on GitHub</a></p>
+        </section>
+      `;
+
+    if (id === 'project2')
+      content = `
+        <h2>fMRI Music Genre Classifier</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>Built a machine‑learning pipeline to predict music genres from fMRI signals; reached ~97% accuracy on held‑out data.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Preprocessed fMRI features and engineered summary statistics per region/time window.</li>
+            <li>Trained and tuned classifiers (e.g., Logistic Regression/SVM/Random Forest) via cross‑validation.</li>
+            <li>Evaluated with accuracy/F1 and inspected feature importance to interpret brain‑region signals.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>Python, scikit‑learn, NumPy, pandas</li>
+            <li>Model selection &amp; cross‑validation, metrics (Accuracy/F1)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Individual (1)</p>
+        </section>
+
+    
+      `;
+
+    if (id === 'project3')
+      content = `
+        <h2>Six Degrees of Separation (Actor Graph)</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>Interactive “Kevin Bacon” style tool that finds shortest connection paths between actors using graph search.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Modeled actors as nodes and co‑appearances as edges; used BFS for unweighted shortest paths.</li>
+            <li>Built a UI to query connections, visualize paths, and change the center actor.</li>
+            <li>Optimized lookups with adjacency lists and precomputed indices.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>Java, Data Structures (Graphs, Queues), BFS</li>
+            <li>Basic GUI/CLI for interaction</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Individual (1)</p>
+        </section>
+
+        <section>
+          <h3>Links</h3>
+          <p><a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/Kevin%20Bacon%20Game" target="_blank" rel="noopener">💻 View Code on GitHub</a></p>
+        </section>
+      `;
+
+    if (id === 'project4')
+      content = `
+        <h2>Collaborative Graphical Editor</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>Real‑time, multi‑client drawing editor with synchronized state across users.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Implemented a client/server architecture with message broadcasting and concurrency control.</li>
+            <li>Used multithreading to handle simultaneous clients and maintain shared canvas consistency.</li>
+            <li>Designed a simple protocol for shape creation, movement, and deletion.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>Java, Sockets/Networking, Multithreading</li>
+            <li>Observer pattern, Serialization</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Team of 2</p>
+        </section>
+      `;
+
+    if (id === 'project5')
+      content = `
+        <h2>Map Pathfinder (Campus Routing)</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>Computed shortest walking routes across a campus map using graph algorithms.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Parsed map data into a weighted graph (locations as nodes, paths as edges).</li>
+            <li>Ran BFS for hop‑based routes and Dijkstra for distance‑weighted paths.</li>
+            <li>Displayed the resulting path with step‑by‑step directions.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>Java, Graphs (BFS/Dijkstra), Priority Queues</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Individual (1)</p>
+        </section>
+
+        <section>
+          <h3>Links</h3>
+          <p><a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/Map%20Pathfinder" target="_blank" rel="noopener">💻 View Code on GitHub</a></p>
+        </section>
+      `;
+
+    if (id === 'project6')
+      content = `
+        <h2>Huffman Encoding (Compression Tool)</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>End‑to‑end compressor/decompressor using Huffman coding.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Built frequency tables, constructed Huffman trees, and generated optimal bit codes.</li>
+            <li>Implemented encoder/decoder pipelines with header metadata for faithful reconstruction.</li>
+            <li>Benchmarked compression ratio and runtime on sample corpora.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>Java, Priority Queues/Heaps, Trees, Bit I/O</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Team of 2)</p>
+        </section>
+
+        <section>
+          <h3>Links</h3>
+          <p><a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/Huffman%20Coding" target="_blank" rel="noopener">💻 View Code on GitHub</a></p>
+        </section>
+      `;
+
+    if (id === 'project7')
+      content = `
+        <h2>Halo Team Networking Glasses</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>Concept and prototype of AR eyewear that overlays real‑time attendee info, name tags, and ice‑breaker prompts to streamline networking.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Explored face/marker detection and UI overlays for glanceable prompts.</li>
+            <li>Designed flows for privacy‑aware consent and quick contact exchange.</li>
+            <li>Built a lightweight landing site to showcase the concept and gather feedback.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>Prototyping &amp; UI design, Web (HTML/CSS/JS)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Team of 4</p>
+        </section>
+
+        <section>
+          <h3>Links</h3>
+          <p><a href="https://hcinetworking.onrender.com/" target="_blank" rel="noopener">🌐 Visit Website</a></p>
+        </section>
+      `;
+
+    if (id === 'project8')
+      content = `
+        <h2>Blogpost Management App (CLI)</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>Command‑line blog system supporting posts, comments, tags, search, and deletion with an interactive command loop.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Created data models for posts (title/body/tags) and nested comments.</li>
+            <li>Added permalink generation and keyword search across posts/comments.</li>
+            <li>Designed a robust CLI for create/read/search/delete flows.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>Python, Standard Library (argparse/json), Data Structures</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Individual (1)</p>
+        </section>
+
+        <section>
+          <h3>Links</h3>
+          <p><a href="https://github.com/Beliganza/Ganza-CSProjects/tree/main/LAB4" target="_blank" rel="noopener">💻 View Code on GitHub</a></p>
+        </section>
+      `;
+
+    if (id === 'project9')
+      content = `
+        <h2>Cross‑Model Adversarial Attacks in Federated Learning</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>Studied transferability of universal adversarial perturbations (FGSM) across models and sites in federated learning.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Trained local and global models (ResNet50, DenseNet121, InceptionV3) on NIH Chest X‑rays and RSNA Pneumonia datasets.</li>
+            <li>Findings: ResNet50 most vulnerable; InceptionV3 most robust; global (FedAvg) models more resistant than local ones.</li>
+            <li>Architectural diversity offers some—though limited—protection; highlights systemic FL risks.</li>
+            <li><em>Future:</em> stronger attacks, adversarial training defenses, broader architectures, real‑world heterogeneous FL.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>Python, PyTorch/TensorFlow (DL)</li>
+            <li>FGSM, Federated Averaging (FedAvg)</li>
+            <li>NIH Chest X‑rays, RSNA Pneumonia datasets</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Individual (1)</p>
+        </section>
+
+        <section>
+          <h3>Links</h3>
+          <p><a href="federated learning.pdf" target="_blank" rel="noopener">📄 View Poster</a></p>
+        </section>
+      `;
+
+    if (id === 'project10')
+      content = `
+        <h2>Portfolio Website</h2>
+
+        <section>
+          <h3>Project Overview</h3>
+          <p>Personal website built as a learning project; iteratively refined layout, accessibility, and content structure.</p>
+        </section>
+
+        <section>
+          <h3>Explanation</h3>
+          <ul>
+            <li>Implemented responsive sections, project modals, and smooth navigation.</li>
+            <li>Refactored CSS for consistency and theme cohesion.</li>
+            <li>Deployed via GitHub/Vercel workflows as I continue to learn.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Tools Used</h3>
+          <ul>
+            <li>HTML, CSS</li>
+            <li>Git/GitHub, Vercel</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Team Members</h3>
+          <p>Individual (1)</p>
+        </section>
+
+       
+      `;
+
+    body.innerHTML = content;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('project-modal').style.display = 'none';
+  }
+
+  window.onclick = e => {
+    if (e.target === document.getElementById('project-modal')) {
+      closeModal();
     }
+  };
+</script>
 
-    function closeModal() {
-      document.getElementById('project-modal').style.display = 'none';
-    }
-
-    window.onclick = e => {
-      if (e.target === document.getElementById('project-modal')) {
-        closeModal();
-      }
-    };
   </script>
 
   <!-- particles.js Library & Init -->
